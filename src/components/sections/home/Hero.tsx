@@ -87,7 +87,7 @@ export default function Hero() {
     Learn About Flux
   </a>
   <a
-    href="#Events"
+    href="faculty"
     className="inline-flex items-center justify-center rounded-md border border-border px-5 py-3 font-medium hover:bg-card transition"
   >
     Upcoming Events

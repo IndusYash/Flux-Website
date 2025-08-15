@@ -5,6 +5,7 @@ import Showcase from "@/components/sections/home/Showcase"
 import Testimonials from "@/components/sections/home/Testimonials"
 import Collaboration from "@/components/sections/home/Collaboration"
 import InductionCTA from "@/components/sections/home/InductionCTA"
+import FacultyPreview from "@/components/sections/home/FacultyPreview"
 
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
       >
         <FeatureGrid />
         <Showcase />
+        <FacultyPreview />
         <Testimonials />
         <Collaboration />
         <InductionCTA />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Linkedin, Twitter, ExternalLink, ChevronRight } from 'lucide-react';
-import { Faculty } from '../../types/faculty';
+import type  { Faculty } from '@/types';
 
 interface FacultyCardProps {
   faculty: Faculty;

@@ -1,4 +1,4 @@
-import { Faculty, HOD, Department } from '../types/faculty';
+import type { Faculty, HOD, Department } from '@/types';
 
 /**
  * Mock data for faculty directory

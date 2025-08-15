@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HOD } from '../../types/faculty';
+import  type { HOD } from '@/types';
 import { Linkedin, Twitter, Mail, Phone, ExternalLink } from 'lucide-react';
 
 interface HODHeroProps {
