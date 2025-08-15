@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "@/pages/home"
+import FacultyPage from './pages/faculty/FacultyPage';
+
 // import Header from "@/components/layout/Header"   // teammate-owned
 // import Footer from "@/components/layout/Footer"   // teammate-owned
 // import Navbar from "@/components/layout/Navbar"   // teammate-owned
@@ -14,7 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<div />} />
-            <Route path="/faculty" element={<div />} />
+            <Route path="/faculty" element={<FacultyPage />} />
             <Route path="/team" element={<div />} />
             <Route path="/contact" element={<div />} />
           </Routes>

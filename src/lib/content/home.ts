@@ -1,4 +1,4 @@
-import type { Feature, Testimonial, Partner, ShowcaseTab } from "@/lib/types"
+import type { Feature, Testimonial, Partner, ShowcaseTab } from "@/types/types"
 
 export const hero = {
   eyebrow: "Student Developers’ Society",

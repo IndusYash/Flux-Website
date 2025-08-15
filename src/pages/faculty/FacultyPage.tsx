@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Faculty } from '../../types/faculty';
-import { hodData, facultyData } from '../../data/facultyData';
+import type { Faculty } from '@/types';
+import { hodData, facultyData } from './facultyData';
 import HODHero from './HODHero';
 import FacultyCard from './FacultyCard';
 import StatsCounter from './StatsCounter';
