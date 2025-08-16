@@ -1,7 +1,7 @@
 // src/components/sections/home/Hero.tsx
 import { motion } from "framer-motion";
 import SectionCTA from "@/components/sectionCTA";
-import logo from "@/assets/images/flux-logo.png"; // <-- if using import path
+import logo from "@/assets/images/flux-logo.png";
 
 const textParent = {
   hidden: { opacity: 0, y: 20 },
@@ -9,10 +9,9 @@ const textParent = {
     opacity: 1,
     y: 0,
     transition: {
-      // Logo lands first; then text reveals
       delayChildren: 0.6,
       staggerChildren: 0.12,
-      ease: "easeOut",
+      ease: [0.6, 0.01, -0.05, 0.95], // Corrected ease value
       duration: 0.6,
     },
   },
@@ -20,7 +19,14 @@ const textParent = {
 
 const textChild = {
   hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.6, 0.01, -0.05, 0.95], // Corrected ease value
+    },
+  },
 };
 
 const logoEnter = {
@@ -118,20 +124,19 @@ export default function Hero() {
               className="relative"
             >
               <motion.img
-                src={logo} // or use: src={logo}
+                src={logo}
                 alt="Flux Society Logo"
                 width={288}
                 height={288}
                 decoding="async"
                 fetchPriority="high"
                 className="w-64 sm:w-72 h-auto object-contain drop-shadow-lg shadow-glow will-change-transform"
-                // subtle idle float after landing
                 animate={{ y: [0, -6, 0] }}
                 transition={{
                   delay: 0.9,
                   duration: 6,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: [0.42, 0, 0.58, 1], // Corrected ease value
                 }}
               />
             </motion.div>
