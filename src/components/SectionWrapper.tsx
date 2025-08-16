@@ -1,10 +1,10 @@
 // components/SectionWrapper.tsx
 interface SectionWrapperProps {
   title: string;
-  description: string;
+  description?: string;
   children: React.ReactNode;
   cta?: React.ReactNode;
-  background?: string; // e.g., "bg-muted/50"
+  background?: string; // e.g. "bg-card/60" or "bg-muted/50"
 }
 
 export default function SectionWrapper({
@@ -12,30 +12,27 @@ export default function SectionWrapper({
   description,
   children,
   cta,
-  background = ''
+  background = "",
 }: SectionWrapperProps) {
   return (
-    <section className={`py-16 ${background}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading + Description */}
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-bold mb-4">{title}</h2>
-          <p className="text-muted-foreground mb-8">
-            {description}
-          </p>
+    <section className={`section ${background}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* HEADER BLOCK */}
+        <div className="max-w-3xl mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            {title}
+          </h2>
+          {description && (
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              {description}
+            </p>
+          )}
+          {cta && <div className="mt-6">{cta}</div>}
         </div>
-
-        {/* Main Content */}
-        <div className="mb-8">
-          {children}
-        </div>
-
-        {/* CTA */}
-        {cta && (
-          <div>
-            {cta}
-          </div>
-        )}
+        
+        {/* CONTENT SLOT */}
+        {children}
       </div>
     </section>
   );

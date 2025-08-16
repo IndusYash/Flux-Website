@@ -7,8 +7,8 @@ import Collaboration from "@/components/sections/home/Collaboration"
 import InductionCTA from "@/components/sections/home/InductionCTA"
 import FacultyPreview from "@/components/sections/home/FacultyPreview"
 import TeamPreview from "@/components/sections/home/TeamPreview"
-import EventsPreview from "@/components/sections/EventsPreview"
-import ContactPreview from "@/components/sections/ContactPreview"
+import EventsPreview from "@/components/sections/home/EventsPreview"
+import ContactPreview from "@/components/sections/home/ContactPreview"
 
 
 export default function HomePage() {
