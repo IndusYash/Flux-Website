@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <SectionWrapper background="bg-card/60">
+    <SectionWrapper title="Get In Touch" background="bg-card/60">
       <footer className="text-white pt-16">
         <div className="max-w-6xl mx-auto px-6">
           {/* Top Row: Links + Newsletter */}
