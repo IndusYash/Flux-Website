@@ -6,6 +6,9 @@ import Testimonials from "@/components/sections/home/Testimonials"
 import Collaboration from "@/components/sections/home/Collaboration"
 import InductionCTA from "@/components/sections/home/InductionCTA"
 import FacultyPreview from "@/components/sections/home/FacultyPreview"
+import TeamPreview from "@/components/sections/home/TeamPreview"
+import EventsPreview from "@/components/sections/EventsPreview"
+import ContactPreview from "@/components/sections/ContactPreview"
 
 
 export default function HomePage() {
@@ -19,10 +22,13 @@ export default function HomePage() {
       >
         <FeatureGrid />
         <Showcase />
+        <EventsPreview />
         <FacultyPreview />
+        <TeamPreview />
         <Testimonials />
         <Collaboration />
         <InductionCTA />
+        <ContactPreview />
       </motion.div>
     </>
   )

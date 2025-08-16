@@ -1,5 +1,6 @@
 // src/components/sections/home/Hero.tsx
 import { motion } from "framer-motion";
+import SectionCTA from "@/components/sectionCTA";
 import logo from "@/assets/images/flux-logo.png"; // <-- if using import path
 
 const textParent = {
@@ -79,21 +80,22 @@ export default function Hero() {
               your platform to lead, learn, and launch.
             </motion.p>
 
-           <motion.div variants={textChild} className="mt-8 flex flex-wrap gap-4">
-  <a
-    href="#About"
-    className="inline-flex items-center justify-center rounded-md bg-primary text-black px-5 py-3 font-medium hover:brightness-110 transition"
-  >
-    Learn About Flux
-  </a>
-  <a
-    href="faculty"
-    className="inline-flex items-center justify-center rounded-md border border-border px-5 py-3 font-medium hover:bg-card transition"
-  >
-    Upcoming Events
-  </a>
-</motion.div>
+            <motion.div
+              variants={textChild}
+              className="mt-8 flex flex-wrap gap-4"
+            >
+              <SectionCTA
+                to="#About"
+                label="Learn About Flux"
+                variant="primary"
+              />
 
+              <SectionCTA
+                to="/faculty"
+                label="Upcoming Events"
+                variant="outline"
+              />
+            </motion.div>
           </motion.div>
 
           {/* RIGHT: Logo */}
