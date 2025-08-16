@@ -6,27 +6,19 @@ import { hodData, facultyData } from './facultyData';
 import HODHero from './HODHero';
 import FacultyCard from './FacultyCard';
 import StatsCounter from './StatsCounter';
-import ThemeToggle from './ThemeToggle';
 import LoadingSkeleton from './LoadingSkeleton';
 
-/**
- * Main Faculty Page Component
- * Displays a comprehensive faculty directory with advanced animations
- */
 const FacultyPage: React.FC = () => {
   const [filteredFaculty] = useState<Faculty[]>(facultyData);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate loading state
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // Prefers-reduced-motion support
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -42,26 +34,25 @@ const FacultyPage: React.FC = () => {
     }
   };
 
- const pageVariants: Variants = {
-  initial: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: prefersReducedMotion ? 0.1 : 0.8,
-      ease: 'easeOut'
+  const pageVariants: Variants = {
+    initial: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0.1 : 0.8,
+        ease: 'easeOut'
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: prefersReducedMotion ? 0.1 : 0.5,
+        ease: 'easeIn'
+      }
     }
-  },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: {
-      duration: prefersReducedMotion ? 0.1 : 0.5,
-      ease: 'easeIn'
-    }
-  }
-};
-
+  };
 
   return (
     <motion.div
@@ -69,13 +60,10 @@ const FacultyPage: React.FC = () => {
       initial="initial"
       animate="visible"
       exit="exit"
-      className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500"
+      className="min-h-screen transition-colors duration-500"
     >
-      {/* Theme Toggle */}
-      <ThemeToggle />
-
       <div className="container mx-auto px-4 py-8 lg:px-8 lg:py-12">
-        {/* Enhanced Animated Faculty Heading */}
+        {/* Animated Faculty Heading */}
         <div className="relative overflow-hidden py-12 mb-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900/30 dark:to-gray-800/30 rounded-2xl shadow-inner">
           <div
             className="absolute inset-0 opacity-10 dark:opacity-5"
@@ -95,11 +83,7 @@ const FacultyPage: React.FC = () => {
                   key={index}
                   className="block"
                   variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: 20,
-                      scale: 0.8
-                    },
+                    hidden: { opacity: 0, y: 20, scale: 0.8 },
                     visible: {
                       opacity: 1,
                       y: 0,
@@ -131,11 +115,7 @@ const FacultyPage: React.FC = () => {
               animate={{
                 opacity: 1,
                 width: '8rem',
-                transition: {
-                  delay: 0.5,
-                  duration: 1,
-                  ease: 'easeOut'
-                }
+                transition: { delay: 0.5, duration: 1, ease: 'easeOut' }
               }}
             >
               <motion.div
@@ -159,23 +139,18 @@ const FacultyPage: React.FC = () => {
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: {
-                  delay: 0.7,
-                  duration: 0.8,
-                  ease: 'easeOut'
-                }
+                transition: { delay: 0.7, duration: 0.8, ease: 'easeOut' }
               }}
             >
-              Meet our distinguished faculty members who are experts in their
-              respective fields
+              Meet our distinguished faculty members who are experts in their respective fields
             </motion.p>
           </motion.div>
         </div>
 
-        {/* HOD Hero Section */}
+        {/* HOD Hero */}
         <HODHero hod={hodData} />
 
-        {/* Statistics Counter */}
+        {/* Stats Counter */}
         <StatsCounter />
 
         {/* Faculty Grid */}

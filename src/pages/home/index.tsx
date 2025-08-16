@@ -10,7 +10,6 @@ import TeamPreview from "@/components/sections/home/TeamPreview"
 import EventsPreview from "@/components/sections/home/EventsPreview"
 import ContactPreview from "@/components/sections/home/ContactPreview"
 
-
 export default function HomePage() {
   return (
     <>

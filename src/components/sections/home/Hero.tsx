@@ -85,13 +85,13 @@ export default function Hero() {
               className="mt-8 flex flex-wrap gap-4"
             >
               <SectionCTA
-                to="#About"
+                to="about"
                 label="Learn About Flux"
                 variant="primary"
               />
 
               <SectionCTA
-                to="/faculty"
+                to="/events"
                 label="Upcoming Events"
                 variant="outline"
               />
